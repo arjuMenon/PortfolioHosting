@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+      integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="stylesheets/works.css" />
+    <title>Arjun Menon</title>
+  </head>
+
+  <body>
+    <header>
+      <a href="#" class="logo">Arjun Menon</a>
+      <nav>
+        <a href="/" class="active">Home</a>
+        <a href="/works" class="active">My Works</a>
+        <a href="/contact" class="active">Contact</a>
+      </nav>
+    </header>
+
+    <div class="grid-2">
+      <div class="section-1">
+        <i class="fas fa-code fa-5x white"></i>
+        <h2>Arjun Menon</h2>
+        <p>Kozhikode, Kerala, India</p>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
+
+      <div class="section-2">
+        <h2>About</h2>
+        <p>
+          I am a backend developer with expertise in Node.js, AWS, and
+          cybersecurity. I’ve built an e-commerce platform featuring a robust
+          backend with a live database, seamless Razorpay payment integration,
+          and perfect routing, paired with a minimal frontend. Additionally, I
+          developed an interactive chatbot using HTML, CSS, and JavaScript,
+          integrating APIs for dynamic responses and smooth user interaction.
+          I’m passionate about creating secure, scalable, and efficient backend
+          systems.
+        </p>
+
+        <h2>Works</h2>
+        <a href="http://13.127.71.35/">FullRevMoto e-commerce Website</a>
+        <a href="http://13.233.27.130/">OneBrainCell Chatbot</a>
+
+        <h2>Resume</h2>
+        <a href="/resume.pdf" class="resume-link" target="_blank">
+          <i class="fas fa-file-pdf"></i> View My Resume
+        </a>
+
+        <h2>Contact</h2>
+        <div class="contact-info">
+          <p>
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:arjunmenon2011@gmail.com"
+              >arjunmenon2011@gmail.com</a
+            >
+          </p>
+          <p>
+            <i class="fas fa-phone"></i>
+            <a href="tel:+918289820032">+91 82898 20032</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<style>
+  /* global */
+  @import url("https://fonts.googleapis.com/css?family=Roboto");
+
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    background-color: #101214;
+    color: #7a7c80;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #1a1c20;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+  }
+  header nav a {
+    margin: 0 15px;
+    color: #7a7c80;
+    text-decoration: none;
+    font-size: 1rem;
+    font-size: medium;
+    padding-bottom: 5px;
+    font-family: fantasy;
+  }
+
+  header nav a.active {
+    color: #b74b4b;
+    border-bottom: 2px solid #b74b4b;
+  }
+
+  header nav a:hover {
+    color: #fff;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+    margin: 50px auto;
+    max-width: 1200px;
+    padding: 20px;
+    gap: 30px;
+  }
+
+  .section-1 {
+    text-align: center;
+  }
+
+  .section-1 i {
+    color: #b74b4b;
+  }
+
+  .section-1 h2 {
+    font-size: 2rem;
+    margin: 20px 0;
+    color: #fff;
+  }
+
+  .section-1 p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+
+  .section-1 a {
+    font-size: 1.5rem;
+    margin: 0 10px;
+    color: #7a7c80;
+  }
+
+  .section-1 a:hover {
+    color: #fff;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .section-2 {
+    padding: 20px;
+    background-color: #1a1c20;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .section-2 h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+
+  .section-2 p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+  }
+
+  .section-2 a {
+    display: block;
+    color: #b74b4b;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    text-decoration: none;
+  }
+
+  .section-2 a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 780px) {
+    .grid-2 {
+      grid-template-columns: 1fr;
+      padding: 10px;
+    }
+
+    header {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    header nav a {
+      margin: 10px 0;
+    }
+
+    .section-2 {
+      margin: 20px 0;
+    }
+  }
+  .contact-info {
+    margin-top: 15px;
+  }
+
+  .contact-info p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    color: #7a7c80;
+  }
+
+  .contact-info i {
+    margin-right: 10px;
+    color: #b74b4b;
+    font-size: 1.5rem;
+  }
+
+  .contact-info a {
+    color: #b74b4b;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .contact-info a:hover {
+    color: #fff;
+  }
+</style>
