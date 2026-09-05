@@ -198,15 +198,13 @@
             box-shadow: 0 0 20px var(--primary-color);
         }
 
-        /* Dynamic Typing Text */
+        /* Dynamic Typing Text (Fixed Display) */
         .typing-text {
             font-size: 3.2rem;
             font-weight: 600;
             min-width: 280px;
-        }
-
-        .typing-text span {
-            position: relative;
+            display: flex;
+            align-items: center;
         }
 
         .typing-text span::before {
@@ -217,22 +215,25 @@
 
         .typing-text span::after {
             content: "";
-            background-color: var(--bg-color);
-            position: absolute;
-            width: calc(100% + 8px);
-            height: 100%;
-            border-left: 3px solid var(--bg-color);
-            right: -8px;
-            animation: cursor 0.6s infinite;
+            display: inline-block;
+            width: 3px;
+            height: 3.2rem;
+            background-color: var(--primary-color);
+            margin-left: 6px;
+            vertical-align: middle;
+            animation: cursor 0.6s infinite alternate;
         }
 
         @keyframes cursor {
+            from {
+                opacity: 1;
+            }
             to {
-                border-left: 3px solid var(--primary-color);
+                opacity: 0;
             }
         }
 
-        /* Updated animation text roles */
+        /* Cycling Titles */
         @keyframes words {
             0%, 20% { content: "Backend Developer"; }
             21%, 40% { content: "Node.js & PHP Developer"; }
@@ -299,6 +300,7 @@
 
             .home-content h3 {
                 font-size: 2.8rem;
+                justify-content: center;
             }
 
             .home-img img {
@@ -342,7 +344,7 @@
     <section class="home">
         <div class="home-content">
             <h1>Hi, It's <span>Arju</span></h1>
-            <h3 class="typing-text">I'm a <span></span></h3>
+            <h3 class="typing-text">I'm a&nbsp;<span></span></h3>
             <p>
                 I am a backend developer and web engineer specializing in building efficient, scalable server-side systems and custom web solutions. Skilled in Node.js, Express, PHP, MongoDB, API design, and AWS cloud computing, I focus heavily on security, site reliability, and performance. In addition to custom server architectures, I have extensive experience in WordPress development—including custom theme building, PHP backend integrations, plugin configuration, and website migration. I enjoy solving complex technical problems and creating seamless integrations to ensure high-performing user experiences.
             </p>
