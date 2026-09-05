@@ -1,318 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arjun Menon | Portfolio</title>
+
+    <!-- Google Fonts & Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="stylesheets/style.css">
-    <title>Portfolio Website</title>
+    
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary-color: #b74b4b;
+            --bg-color: #0d0d0d;
+            --nav-bg: #161616;
+            --text-color: #ffffff;
+            --transition-speed: 0.3s;
+        }
+
+        /* Base Resets */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            font-size: 62.5%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem 9%;
+            background-color: rgba(13, 13, 13, 0.9);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo {
+            font-size: 3rem;
+            color: var(--primary-color);
+            font-weight: 800;
+            cursor: pointer;
+            transition: var(--transition-speed) ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            font-size: 1.8rem;
+            color: var(--text-color);
+            margin-left: 4rem;
+            font-weight: 500;
+            transition: var(--transition-speed) ease;
+            border-bottom: 3px solid transparent;
+            padding-bottom: 0.5rem;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        #menu-icon {
+            font-size: 3.2rem;
+            color: var(--primary-color);
+            cursor: pointer;
+            display: none;
+        }
+
+        /* Hero Section */
+        section {
+            min-height: 100vh;
+            padding: 10rem 9% 5rem;
+        }
+
+        .home {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8rem;
+        }
+
+        .home-content h1 {
+            font-size: 6rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        span {
+            color: var(--primary-color);
+        }
+
+        .home-content h3 {
+            font-size: 3.2rem;
+            margin: 1rem 0 2rem;
+            font-weight: 600;
+        }
+
+        .home-content p {
+            font-size: 1.6rem;
+            line-height: 1.7;
+            max-width: 600px;
+            color: #d1d1d1;
+        }
+
+        .home-img img {
+            width: 32vw;
+            max-width: 400px;
+            border-radius: 50%;
+            box-shadow: 0 0 25px var(--primary-color);
+            transition: var(--transition-speed) ease;
+            object-fit: cover;
+        }
+
+        .home-img img:hover {
+            box-shadow: 0 0 35px var(--primary-color);
+        }
+
+        /* Social Icons */
+        .social-icons {
+            margin: 3rem 0;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 4.5rem;
+            height: 4.5rem;
+            background-color: transparent;
+            border: 0.2rem solid var(--primary-color);
+            font-size: 2rem;
+            border-radius: 50%;
+            transition: var(--transition-speed) ease;
+            color: var(--primary-color);
+        }
+
+        .social-icons a:hover {
+            color: var(--bg-color);
+            transform: scale(1.1) translateY(-5px);
+            background-color: var(--primary-color);
+            box-shadow: 0 0 20px var(--primary-color);
+        }
+
+        /* Button Style */
+        .btn {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background-color: transparent;
+            border-radius: 4rem;
+            font-size: 1.6rem;
+            color: var(--primary-color);
+            letter-spacing: 0.2rem;
+            font-weight: 600;
+            border: 2px solid var(--primary-color);
+            transition: var(--transition-speed) ease;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-color);
+            color: var(--bg-color);
+            box-shadow: 0 0 20px var(--primary-color);
+        }
+
+        /* Dynamic Typing Text */
+        .typing-text {
+            font-size: 3.2rem;
+            font-weight: 600;
+            min-width: 280px;
+        }
+
+        .typing-text span {
+            position: relative;
+        }
+
+        .typing-text span::before {
+            content: "Back-End Developer";
+            color: var(--primary-color);
+            animation: words 20s infinite;
+        }
+
+        .typing-text span::after {
+            content: "";
+            background-color: var(--bg-color);
+            position: absolute;
+            width: calc(100% + 8px);
+            height: 100%;
+            border-left: 3px solid var(--bg-color);
+            right: -8px;
+            animation: cursor 0.6s infinite;
+        }
+
+        @keyframes cursor {
+            to {
+                border-left: 3px solid var(--primary-color);
+            }
+        }
+
+        @keyframes words {
+            0%, 20% { content: "Developer"; }
+            21%, 40% { content: "Web Developer"; }
+            41%, 60% { content: "Back-End Developer"; }
+            61%, 80% { content: "WordPress Developer"; }
+            81%, 100% { content: "AWS Solution Architect"; }
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 995px) {
+            #menu-icon {
+                display: block;
+            }
+
+            nav {
+                position: absolute;
+                top: 100%;
+                right: -100%;
+                width: 60%;
+                background-color: var(--nav-bg);
+                border-left: 2px solid var(--primary-color);
+                border-bottom: 2px solid var(--primary-color);
+                border-bottom-left-radius: 2rem;
+                padding: 2rem 0;
+                flex-direction: column;
+                align-items: center;
+                transition: 0.4s ease;
+            }
+
+            nav.active {
+                right: 0;
+            }
+
+            nav a {
+                display: block;
+                font-size: 2rem;
+                margin: 2rem 0;
+                border-bottom: none;
+            }
+
+            nav a:hover,
+            nav a.active {
+                border-bottom: none;
+                padding: 0.5rem 1.5rem;
+                background-color: var(--primary-color);
+                color: var(--bg-color);
+                border-radius: 0.5rem;
+            }
+
+            .home {
+                flex-direction: column-reverse;
+                justify-content: center;
+                text-align: center;
+                gap: 4rem;
+            }
+
+            .home-content p {
+                margin: 0 auto;
+            }
+
+            .home-content h1 {
+                font-size: 4.5rem;
+            }
+
+            .home-content h3 {
+                font-size: 2.8rem;
+            }
+
+            .home-img img {
+                width: 60vw;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 450px) {
+            header {
+                padding: 2rem 5%;
+            }
+
+            section {
+                padding: 10rem 5% 5rem;
+            }
+
+            .home-img img {
+                width: 75vw;
+            }
+        }
+    </style>
 </head>
 <body>
+
+    <!-- Header Section -->
     <header>
         <a href="#" class="logo">Arjun Menon</a>
 
-        <nav>
-            <a href="#" class="active"> Home</a>
-            <!-- <a href="#" >Services</a> -->
-            <!-- <a href="#" >Skills</a> -->
-            <!-- <a href="#" >Education</a> -->
-             <a href="/PortfolioHosting/works.html" class ="active" >My Works</a> 
-            <a href="/PortfolioHosting/contact.html" class="active" >Contact</a>
+        <i class="fa-solid fa-bars" id="menu-icon"></i>
+
+        <nav id="navbar">
+            <a href="#" class="active">Home</a>
+            <a href="/PortfolioHosting/works.html">My Works</a> 
+            <a href="/PortfolioHosting/contact.html">Contact</a>
         </nav>
     </header>
+
+    <!-- Main Hero Section -->
     <section class="home">
-        <div class="home-img">
-            <img src="gear5.jpg" alt="">
-        </div>
         <div class="home-content">
             <h1>Hi, It's <span>Arju</span></h1>
             <h3 class="typing-text">I'm a <span></span></h3>
-            <p>I am a backend developer with experience in building efficient, scalable server-side systems. Skilled in Node.js, Express, MongoDB, API design, and AWS cloud computing, I focus on performance and security. I enjoy solving complex problems and creating seamless integrations to ensure smooth user experiences.</p>
+            <p>
+                I am a backend developer and web engineer specializing in building efficient, scalable server-side systems and custom web solutions. Skilled in Node.js, Express, PHP, MongoDB, API design, and AWS cloud computing, I focus heavily on security, site reliability, and performance. In addition to custom server architectures, I have extensive experience in WordPress development—including custom theme building, PHP backend integrations, plugin configuration, and website migration. I enjoy solving complex technical problems and creating seamless integrations to ensure high-performing user experiences.
+            </p>
+
             <div class="social-icons">
-                <a href="https://www.linkedin.com/in/arjun-menon-545051210/"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/arjuMenon"><i class="fa-brands fa-github"></i></a>
-                <a href="https://x.com/_nika56?t=M-heYkqF7AJlh0aEsIieZA&s=09"><i class="fa-brands fa-x-twitter"></i></a>
-                <!-- <a href="#"><i class="fa-brands fa-instagram"></i></a> -->
+                <a href="https://www.linkedin.com/in/arjun-menon-545051210/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/arjuMenon" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://x.com/_nika56?t=M-heYkqF7AJlh0aEsIieZA&s=09" target="_blank" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
             </div>
-            <a href="/PortfolioHosting/contact.html" class="btn">Hire me</a>
+
+            <a href="/PortfolioHosting/contact.html" class="btn">Hire Me</a>
+        </div>
+
+        <div class="home-img">
+            <img src="gear5.jpg" alt="Arjun Menon Profile Picture">
         </div>
     </section>
+
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const navbar = document.getElementById('navbar');
+
+        menuIcon.addEventListener('click', () => {
+            menuIcon.classList.toggle('fa-xmark');
+            navbar.classList.toggle('active');
+        });
+
+        // Close menu when clicking navigation links
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuIcon.classList.remove('fa-xmark');
+                navbar.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
-<style>
-
-</style>
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    border: none;
-    outline: none;
-    font-family: 'Poppins', sans-serif;
-}
-
-html{
-    font-size: 62.5%;
-}
-
-body{
-    width: 100%;
-    height: 100vh;
-    overflow-x: hidden;
-    background-color: black;
-    color: white;
-}
-
-header{
-    margin-top: 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 1rem 9%;
-    background-color: transparent;
-    filter: drop-shadow(10px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-}
-
-.logo{
-    font-size: 3rem;
-    color: #b74b4b;
-    font-weight: 800;
-    cursor: pointer;
-    transition: 0.5s ease;
-}
-
-.logo:hover{
-    transform: scale(1.1);
-}
-
-nav a{
-    font-size: 1.8rem;
-    color: white;
-    margin-left: 4rem;
-    font-weight: 500;
-    transition: 0.3s ease;
-    border-bottom: 3px solid transparent;
-}
-
-nav a:hover,
-nav a.active{
-    color: #b74b4b;
-    border-bottom: 3px solid #b74b4b;
-}
-
-@media(max-width:995px){
-    nav{
-        position: absolute;
-        display: none;
-        top: 0;
-        right: 0;
-        width: 40%;
-        border-left: 3px solid #b74b4b;
-        border-bottom: 3px solid #b74b4b;
-        border-bottom-left-radius: 2rem;
-        padding: 1rem solid;
-        background-color: #161616;
-        border-top: 0.1rem solid rgba(0,0,0,0.1);
-    }
-
-    nav.active{
-        display: block;
-    }
-
-    nav a{
-        display: block;
-        font-size: 2rem;
-        margin: 3rem 0;
-    }
-
-    nav a:hover,
-    nav a.active{
-        padding: 1rem;
-        border-radius: 0.5rem;
-        border-bottom: 0.5rem solid #b74b4b;
-    }
-}
-
-section{
-    min-height: 100vh;
-    padding: 5rem 9% 5rem;
-}
-
-.home{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8rem;
-    background-color: black;
-}
-
-.home .home-content h1{
-    font-size: 6rem;
-    font-weight: 700;
-    line-height: 1.3;
-}
-
-span{
-    color: #b74b4b;
-}
-
-.home-content h3{
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-}
-
-.home-content p{
-    font-size: 1.6rem;
-}
-
-.home-img{
-    border-radius: 50%;
-}
-
-.home-img img{
-    position: relative;
-    width: 32vw;
-    border-radius: 50%;
-    box-shadow: 0 0 25px solid #b74b4b;
-    cursor: pointer;
-    transition: 0.2s linear;
-}
-
-.home-img img:hover{
-    font-size: 1.8rem;
-    font-weight: 500;
-}
-
-.social-icons a{
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 4rem;
-    height: 4rem;
-    background-color: transparent;
-    border: 0.2rem solid #b74b4b;
-    font-size: 2rem;
-    border-radius: 50%;
-    margin: 3rem 1.5rem 3rem 0;
-    transition: 0.3s ease;
-    color: #b74b4b;
-}
-
-.social-icons a:hover{
-    color: black;
-    transform: scale(1.3) translateY(-5px);
-    background-color: #b74b4b;
-    box-shadow: 0  0 25px #b74b4b;
-}
-
-.btn{
-    display: inline-block;
-    padding: 1rem 2.8rem;
-    background-color: black;
-    border-radius: 4rem;
-    font-size: 1.6rem;
-    color: #b74b4b;
-    letter-spacing: 0.3rem;
-    font-weight: 600;
-    border: 2px solid #b74b4b;
-    transition: 0.3s ease;
-    cursor: pointer;
-}
-
-.btn:hover{
-    transform: scale3d(1.03);
-    background-color: #b74b4b;
-    color: black;
-    box-shadow: 0 0 25px #b74b4b;
-}
-
-.typing-text{
-    font-size: 34px;
-    font-weight: 600;
-    min-width: 280px;
-}
-
-.typing-text span{
-    position: relative;
-}
-
-.typing-text span::before{
-    content: "Back-End Developer";
-    color: #b74b4b;
-    animation: words 20s infinite;
-}
-
-.typing-text span::after{
-    content: "";
-    background-color: black;
-    position: absolute;
-    width: calc(100% + 8px);
-    height: 100%;
-    border-left: 3px solid black;
-    right: -8;
-    animation: cursor 0.6s infinite;
-}
-
-@keyframes cursor{
-    to{
-        border-left: 3px solid #b74b4b;
-    }
-}
-
-@keyframes words{
-    0%, 20%{
-        content: "Developer";
-    }
-    21%, 40%{
-        content: "Web Developer";
-    }
-    41%, 60%{
-        content: "Back-end Developer";
-    }
-    61%, 80%{
-        content: "WordPress Developer";
-    }
-    81%, 100%{
-        content: "AWS Solution-Architect";
-    }
-}
-
-@media (max-width: 1000px){
-    .home{
-        gap: 4rem;
-    }
-}
-
-@media(max-width:995px){
-    .home{
-        flex-direction: column;
-        margin: 5rem 4rem;
-    }
-
-    .home .home-content h3{
-        font-size: 2.5rem;
-    }
-
-    .home-content h1{
-        font-size: 5rem;
-    }
-
-    .home-img img{
-        width: 70vw;
-        margin-top: 4rem;
-    }
-}
-
-
-</style>
