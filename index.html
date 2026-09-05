@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arjun Menon | Portfolio</title>
 
-    <!-- Google Fonts & Font Awesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -211,7 +210,7 @@
         }
 
         .typing-text span::before {
-            content: "Back-End Developer";
+            content: "Backend Developer";
             color: var(--primary-color);
             animation: words 20s infinite;
         }
@@ -233,12 +232,13 @@
             }
         }
 
+        /* Updated animation text roles */
         @keyframes words {
-            0%, 20% { content: "Developer"; }
-            21%, 40% { content: "Web Developer"; }
-            41%, 60% { content: "Back-End Developer"; }
-            61%, 80% { content: "WordPress Developer"; }
-            81%, 100% { content: "AWS Solution Architect"; }
+            0%, 20% { content: "Backend Developer"; }
+            21%, 40% { content: "Node.js & PHP Developer"; }
+            41%, 60% { content: "WordPress Specialist"; }
+            61%, 80% { content: "API & Web Engineer"; }
+            81%, 100% { content: "AWS Solutions Developer"; }
         }
 
         /* Responsive Breakpoints */
@@ -327,7 +327,6 @@
 </head>
 <body>
 
-    <!-- Header Section -->
     <header>
         <a href="#" class="logo">Arjun Menon</a>
 
@@ -340,7 +339,6 @@
         </nav>
     </header>
 
-    <!-- Main Hero Section -->
     <section class="home">
         <div class="home-content">
             <h1>Hi, It's <span>Arju</span></h1>
@@ -363,7 +361,6 @@
         </div>
     </section>
 
-    <!-- JavaScript for Mobile Menu Toggle -->
     <script>
         const menuIcon = document.getElementById('menu-icon');
         const navbar = document.getElementById('navbar');
